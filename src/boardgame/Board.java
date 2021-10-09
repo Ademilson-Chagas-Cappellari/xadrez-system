@@ -31,10 +31,12 @@ public class Board {
 		this.columns = columns;
 	}
 	
+	//Metodo para retornar uma peça dada a uma linha e uma coluna
 	public Piece piece(int row, int column) {
 		return pieces[row][column];
 	}
 	
+	//Sobrecarga do metodo anterior para retornar a peça pela posição
 	public Piece piece(Position position) {
 		return pieces[position.getRow()][position.getColumn()];
 	}
