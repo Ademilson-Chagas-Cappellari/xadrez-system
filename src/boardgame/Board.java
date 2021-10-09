@@ -1,17 +1,20 @@
 package boardgame;
 
+//Classe Tabuleiro
 public class Board {
 	
-	private int rows;
-	private int columns;
-	private Piece[][] pieces;
+	private int rows; //Quantidade de linhas
+	private int columns; //Quantidade de colunas
+	private Piece[][] pieces; //Matriz de peças
 	
+	//Construtor com argumentos
 	public Board(int rows, int columns) {
 		this.rows = rows;
 		this.columns = columns;
-		pieces = new Piece[rows][columns];
+		pieces = new Piece[rows][columns]; //Matriz de peças instanciada na quantidade de linhas informadas e colunas também informadas
 	}
 
+	//Getters e Setters "columns e rows" somente
 	public int getRows() {
 		return rows;
 	}
@@ -40,5 +43,17 @@ public class Board {
 		pieces[position.getRow()][position.getColumn()] = piece;
 		piece.position = position;
 		
+	}
+	
+	private boolean positionExists(int row, int column) {
+		return row >= 0 && row < rows && column >= 0 && column < columns;
+		
+	}
+	public boolean positionExists(Position positon) {
+		return positionExists(position.getRow(), position.getColumn());
+	}
+	// Para testar se há uma peça nesta posição.
+	public boolean thereIsAPiece(Position position) {
+		return piece(position) != null;
 	}
 }
