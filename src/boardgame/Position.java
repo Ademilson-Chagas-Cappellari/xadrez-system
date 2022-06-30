@@ -32,7 +32,7 @@ public class Position {
 	
 	// para imprimir uma posição na tela.
 	
-	@Override  //Sobreposição (sobreescrevendo o metodo toString que é da classe object)
+	@Override  //Sobreposição (sobre escrevendo o metodo toString que é da classe object)
 	public String toString() {
 		return row + ", " + column; //Imprime a linha " , " e a coluna
 		
